@@ -74,4 +74,5 @@ Recap the understanding from the lessons so far and answer quizes related to the
 - Team Building
 
 ## Certificate of Completion
-![Certificate of Completion]("Verizon Cloud Platform/img/Completion-Certificate.png")
+<img width="942" height="692" alt="Completion_Certificate" src="https://github.com/user-attachments/assets/568af237-310d-4675-b348-bbb5a348abe2" />
+
