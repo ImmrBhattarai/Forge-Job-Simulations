@@ -74,4 +74,4 @@ Recap the understanding from the lessons so far and answer quizes related to the
 - Team Building
 
 ## Certificate of Completion
-![Certificate of Completion](img/Completion-Certificate.pdf)
+![Certificate of Completion](img/Completion-Certificate.png)
