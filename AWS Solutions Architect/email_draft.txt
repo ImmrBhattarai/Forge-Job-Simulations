@@ -1,0 +1,23 @@
+Hi Lilly,
+
+Thank you for reaching out. We can understand your concern and the issue with the current architecture. Please be sure that AWS is fully here to coordinate with you until your issue gets resolved. I am Suraj Bhattarai, a solutions architect at AWS, here for your help.
+
+Our team purposes a new architectural implementation for your business, keeping in mind, the growing needs and demand.
+
+Since the company is in early phase of the business and a proper cloud implementation, we suggest opting in a greenfield approach becoming cloud native by moving fully towards a managed AWS Solution like Elastic Beanstalk which readily supports python. However, for the very first migration and setup, your existing business is likely going to experience a downtime.
+
+Elastic Beanstalk incorporates Load Balancer (to meet your needs to scale automatically), Relational Database Service (for your PostgreSQL needs) and EC2 clusters (to spread out the CPU and memory over-utilization, on a single EC2 instance); all abstracted under a single managed solution from AWS. Once applied, further improvements will no longer induce downtime as you can adopt the Elastic Beanstalk’s Blue/Green deployment.
+
+A proper suggestion of the new architecture is attached below. Here's a short overview of the architecture and the components involved.
+
+Routed 53 Hosted Zone will point the internet traffic to a Load Balancer, that further spreads out the traffic among different cluster instances in two availability zones. For Disaster Recovery (DR) strategies and high availability, EC2 auto-scaling group are introduced in the two availability zonal setup. CodePipeline service can deploy new version of the business application easily on the EC2 cluster. A Primary RDS PostgreSQL server is set up on the AZ#1, which accepts database traffic from each zone, single-handedly. With a standby replica over AZ#2, we ensure a redundancy for database as well. And a proper backup of both the EC2 instance image/configuration and the database is stored in S3 bucket. An additional availability zone for redundancy is proposed, but is not necessary.
+
+This was just one of the less hectic way to solve your issue quickly. However, if you've like to explore more granular options, AWS offers many other services which can come handy too.
+
+For, e.g., options like Lambda or Fargate can be more complex to set up. Lightsail and EC2 can be easy, but they don’t provide that automatic scaling. With these other alternative options, you can end up paying more because of running virtual machines, often not at capacity.
+
+However, each of these services also has its own advantages, and depending on the application that’s being built we can provide different recommendations and discuss the options more in-depth with you before coming up with the final design. Feel free to write back.
+
+Cheers,
+Suraj Bhattarai
+AWS Solutions Architect
